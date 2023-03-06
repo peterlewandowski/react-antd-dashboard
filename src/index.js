@@ -1,13 +1,34 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import "./index.css";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import App from "./App";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import reportWebVitals from "./reportWebVitals";
+import { ConfigProvider, theme } from "antd";
+import NavBar from "./components/common/NavBar";
+import { BrowserRouter } from "react-router-dom";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <ConfigProvider
+        theme={{
+          token: {
+            colorPrimary: "#170762",
+            colorSecondary: "#04ded0",
+          },
+          components: {
+            Button: {
+              colorPrimary: "#00b96b",
+            },
+          },
+          // algorithm: theme.darkAlgorithm,
+        }}
+      >
+        <App />
+      </ConfigProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

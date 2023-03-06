@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Button, Layout, Menu } from "antd";
+import logo from "./logo.svg";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import "antd/dist/reset.css";
+import "./App.css";
+
+import { Route, Routes } from "react-router-dom";
+import NavBar from "./components/common/NavBar";
+
+const { Header, Footer, Sider, Content } = Layout;
+
+const contentStyle = {
+  textAlign: "center",
+  minHeight: 120,
+  lineHeight: "120px",
+  color: "#fff",
+  backgroundColor: "#108ee9",
+};
+const siderStyle = {
+  textAlign: "center",
+  lineHeight: "120px",
+  color: "#fff",
+  backgroundColor: "#3ba0e9",
+};
+const footerStyle = {
+  textAlign: "center",
+  color: "#fff",
+  backgroundColor: "#7dbcea",
+};
+
+const App = () => (
+  <>
+    <NavBar />
+
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <div className="App">
+          </div>
+        }
+      ></Route>
+    </Routes>
+  </>
+);
 
 export default App;
